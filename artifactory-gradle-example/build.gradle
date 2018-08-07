@@ -1,0 +1,38 @@
+buildscript {
+  ext {
+    javaVersion = JavaVersion.VERSION_1_8
+    lombokVersion = '1.18.2' //java 10
+    logbackVersion = '1.2.3'
+    slf4jVersion = '1.7.25'
+    vavrVersion = '0.9.2'
+
+    junitPlatformVersion = '1.2.0'
+    junitJupiterVersion = '5.2.0'
+    assertjVersion = '3.10.0'
+    jgivenVersion = '0.15.3'
+    hamcrestVersion = '1.3'
+    junit4Version = '4.12'
+  }
+}
+
+//tag::content[]
+plugins {
+  id 'com.jfrog.artifactory' version '4.7.5' apply false
+  // ...
+  //end::content[]
+  id 'io.spring.dependency-management' version '1.0.6.RELEASE' apply false
+  id 'com.github.johnrengelman.shadow' version '2.0.2' apply false
+  id 'io.franzbecker.gradle-lombok' version '1.14' apply false
+  //tag::content[]
+}
+//end::content[]
+
+apply from: "$projectDir/gradle/ide.gradle"
+apply from: "$projectDir/gradle/clean.gradle"
+apply from: "$projectDir/gradle/repositories.gradle"
+apply from: "$projectDir/gradle/java.gradle"
+apply from: "$projectDir/gradle/main.gradle"
+apply from: "$projectDir/gradle/junit.gradle"
+//tag::content[]
+apply from: "$projectDir/gradle/artifactory.gradle"
+//end::content[]

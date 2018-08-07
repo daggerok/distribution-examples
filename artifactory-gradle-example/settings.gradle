@@ -1,0 +1,2 @@
+rootProject.name = 'artifactory-gradle-example'
+enableFeaturePreview 'STABLE_PUBLISHING'
