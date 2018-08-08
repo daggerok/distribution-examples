@@ -1,6 +1,6 @@
 //tag::content[]
 
-=== artifactory-gradle-example
+=== artifactory-maven-repo-gradle-example
 
 .bootstrap artifactory (docker)
 [source,bash]
@@ -8,13 +8,25 @@
 docker run --name artifactory -d -p 80:8081 -v $(pwd)/artifactory:/var/opt/jfrog/artifactory docker.bintray.io/jfrog/artifactory-oss:6.1.0
 ----
 
-.follow wizard to setup artifactory
-[source,bash]
-----
-# create gradle-defaul repository: 'gradle-releases'
-----
+configure artifactory
 
-image::./images/artifactory-gradle-example.png[]
+image::./images/artifactory-maven-repo-gradle-example-01.png[]
+
+skip password configuration
+
+image::./images/artifactory-maven-repo-gradle-example-02.png[]
+
+skip proxy configuration
+
+image::./images/artifactory-maven-repo-gradle-example-03.png[]
+
+create maven default repository
+
+image::./images/artifactory-maven-repo-gradle-example-04.png[]
+
+we interested in 'libs-release-local' and 'libs-snapshot-local'
+
+image::./images/artifactory-maven-repo-gradle-example-05.png[]
 
 .configure gradle project properties
 [source,properties]

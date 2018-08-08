@@ -39,6 +39,7 @@ include::../README.adoc[tags=content]
 == Implementation
 
 include::../artifactory-gradle-example/README.adoc[tags=content]
+include::../artifactory-maven-repo-gradle-example/README.adoc[tags=content]
 
 == Links
 
